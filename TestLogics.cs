@@ -1,7 +1,7 @@
 public class TestLogics
 {
 
-    public static bool FibonacciSequence(int number)
+    public bool FibonacciSequence(int number)
     {
         int previousFibonnaci = 0;
         int actualFibonnaci = 1;
@@ -25,30 +25,35 @@ public class TestLogics
         return false;
     }
 
-    public static int CountNumberOfAInString(string frase)
+    public void CountNumberOfAInString(string? frase)
     {
         int count = 0;
-
-        foreach (char charactere in frase)
+        if (!string.IsNullOrEmpty(frase))
         {
-            if (charactere == 'a' || charactere == 'A')
+            foreach (char charactere in frase)
             {
-                count++;
+                if (charactere == 'a' || charactere == 'A')
+                {
+                    count++;
+                }
             }
         }
 
-        return count;
+        Console.WriteLine($"O numero de 'As' é: {count}");
     }
 
-    public static void ResolveFor()
+    public void ResolveFor()
     {
+        int index = 12;
         int soma = 0;
         int K = 1;
-        for (int i = 12; K < i; i--)
+        while (K < index)
         {
-
+            K++;
+            soma = soma + K;
         }
 
+        Console.WriteLine($"O valor de SOMA do exercicio numero 3 é: {soma}");
     }
 
 }
